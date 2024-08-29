@@ -1,0 +1,84 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Loop Examples</title>
+<style>
+  body {
+    font-family: Arial, sans-serif;
+    padding: 20px;
+  }
+
+  h2 {
+    text-align: center;
+    color: #333;
+  }
+
+  h3 {
+    color: #666;
+  }
+
+  #for-in-example, #forEach-example {
+    margin-bottom: 20px;
+  }
+
+  ul {
+    list-style-type: none;
+    padding: 0;
+  }
+
+  li {
+    margin-bottom: 5px;
+    padding: 5px;
+    background-color: #f0f0f0;
+    border: 1px solid #ccc;
+  }
+</style>
+</head>
+<body>
+  <h2>Loop Examples</h2>
+  
+  <div id="for-in-example">
+    <h3>Using for...in Loop</h3>
+    <ul id="for-in-list"></ul>
+  </div>
+
+  <div id="forEach-example">
+    <h3>Using forEach Method</h3>
+    <ul id="forEach-list"></ul>
+  </div>
+
+  <script>
+    // Object with properties
+    const person = {
+        firstName: 'John',
+        lastName: 'Doe',
+        age: 30
+    };
+
+    // Get the UL element for for...in loop example
+    const forInList = document.getElementById('for-in-list');
+
+    // Using for...in loop to iterate over object properties
+    for (let key in person) {
+        const li = document.createElement('li');
+        li.textContent = `${key}: ${person[key]}`;
+        forInList.appendChild(li);
+    }
+
+    // Array of colors
+    const colors = ['red', 'green', 'blue'];
+
+    // Get the UL element for forEach method example
+    const forEachList = document.getElementById('forEach-list');
+
+    // Using forEach method to iterate over array elements
+    colors.forEach(function(color, index) {
+        const li = document.createElement('li');
+        li.textContent = `${index}: ${color}`;
+        forEachList.appendChild(li);
+    });
+  </script>
+</body>
+</html>
